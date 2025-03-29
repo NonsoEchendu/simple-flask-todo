@@ -23,4 +23,6 @@ def delete(todo_id):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=6070)
+    print("Starting Flask Todo App in container-safe mode...")
+    # Use production mode, not debug mode
+    app.run(host='0.0.0.0', port=8080, debug=False, use_reloader=False)
